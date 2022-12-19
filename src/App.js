@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// komponenta je obyčejná funkce
+// komponenta má stejný název jako je název souboru
+// komponenta obsahuje return
+// na konci souboru musí být řádek s exportem
+// v return musí něco být
+// return dokáže vrátit jen jeden tag => vkládaný  kus obaluji do <div></div>
 
-function App() {
+import Book from "./components/Book";
+
+const App = () => {
+  const books = [
+    {
+      id: 1,
+      image:
+        "https://www.knihydobrovsky.cz/thumbs/book-list/mod_eshop/produkty/h/harry-potter-a-kamen-mudrcu-9788000061917.jpg.webp",
+      title: "Harry Potter a Kámen mudrců",
+    },
+    {
+      id: 2,
+      image:
+        "https://www.knihydobrovsky.cz/thumbs/book-list/mod_eshop/produkty/333420609/10.jpg.webp",
+      title: "Harry Potter a Tajemná komnata",
+    },
+    {
+      id: 3,
+      image:
+        "https://www.knihydobrovsky.cz/thumbs/book-list/mod_eshop/produkty/h/harry-potter-a-vezen-z-azkabanu-9788000063393.jpg.webp",
+      title: "Harry Potter a Vězeň z Azkabanu",
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="all-books">
+      <Book myimage={books[0].image} mytitle={books[0].title}></Book>
+      <Book myimage={books[1].image} mytitle={books[1].title}></Book>
+      <Book myimage={books[2].image} mytitle={books[2].title}></Book>
     </div>
   );
-}
+};
 
 export default App;
